@@ -1,0 +1,61 @@
+version: '3.9'
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+    #  - db_data:/var/lib/mysql
+      - ./mysql:/var/lib/mysql
+      - ./srv_data/images:/app/images 
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_DATABASE: cocktail
+      MYSQL_USER: roger
+      MYSQL_PASSWORD: marcel
+  
+  servuser:
+    container_name: serv_user
+    depends_on:
+      - db
+    # build:
+    #   context: .
+    #   dockerfile: ./srv_user/Dockerfile
+    build: ./srv_user/
+    ports:
+      - 10000:10000
+    restart: always
+    environment:
+      DB_HOST: db
+      DB_NAME: cocktail
+      DB_USER: roger
+      DB_PASS: marcel
+
+  servdata:
+    container_name: serv_data
+    depends_on:
+      - db
+    # build:
+    #   context: .
+    #   dockerfile: ./srv_data/Dockerfile
+    build: ./srv_data
+    ports:
+      - 10001:10001
+    restart: always
+    environment:
+      DB_HOST: db
+      DB_NAME: cocktail
+      DB_USER: roger
+      DB_PASS: marcel
+  
+  servmail:
+    container_name: serv_ctn
+    # build:
+    #   context: .
+    #   dockerfile: ./srv_ctn/Dockerfile
+    build: ./srv_ctn
+    ports:
+      - 10002:10002
+    restart: always
+
+volumes:
+  db_data: {}

@@ -1,0 +1,4 @@
+backend/srv_user/node_modules
+backend/srv_data/node_modules
+backend/srv_ctn/node_modules
+frontend/cocktail/node_modules
