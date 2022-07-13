@@ -11,8 +11,8 @@ read
 
 
 docker login
-docker build -t dinoz0/pca_cloud ../backend/srv_ctn 
-docker push dinoz0/pca_cloud 
+docker build -t dinoz/pca_cloud ../backend/srv_ctn 
+docker push dinoz/pca_cloud 
 
 
 
