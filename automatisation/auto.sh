@@ -4,19 +4,20 @@ git add .
 
 echo "C'est ou que c'est?"
 read chemin
-
 cd $chemin
-
-echo 'Enter the commit message:'
-read commitMessage
-
-git commit -m "$commitMessage"
-
-echo 'Enter the name of the branch:'
-read branch
-
-git push origin $branch
-
+git commit
+git push origin 
 read
+
+docker build -t dinoz0/pca_cloud ../backend/srv_ctn 
+docker push dinoz/pca_cloud:tagname 
+
+
+
+
+
+
+
+
 
 echo "J'ai finiiiiiiiii"
