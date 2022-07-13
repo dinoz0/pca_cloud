@@ -2,6 +2,11 @@
 
 git add .
 
+echo "C'est ou que c'est?"
+read chemin
+
+cd $chemin
+
 echo 'Enter the commit message:'
 read commitMessage
 
