@@ -9,8 +9,10 @@ git commit
 git push origin 
 read
 
+
+docker login
 docker build -t dinoz0/pca_cloud ../backend/srv_ctn 
-docker push dinoz/pca_cloud 
+docker push dinoz0/pca_cloud 
 
 
 
