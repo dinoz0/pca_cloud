@@ -12,6 +12,7 @@ read
 
 docker login
 docker build -t dinoz/pca_cloud ../backend/srv_ctn 
+docker build -t dinoz/pca_cloud ../frontend/cocktail 
 docker push dinoz/pca_cloud 
 
 kubectl apply -f ../mysql_dep_secret.yml
