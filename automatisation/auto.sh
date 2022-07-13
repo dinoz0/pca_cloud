@@ -23,6 +23,7 @@ kubectl apply -f ../mysql_dep.yml
 kubectl apply -f ../backend/srv_ctn/ctn.yml
 kubectl apply -f ../data-service.yml
 kubectl apply -f ../user-service.yml
+kubectl apply -f ../front-service.yml
 
 
 
