@@ -14,7 +14,14 @@ docker login
 docker build -t dinoz/pca_cloud ../backend/srv_ctn 
 docker push dinoz/pca_cloud 
 
+kubectl apply -f ../mysql_dep_secret.yml
+kubectl apply -f ../mysql-configmap.yml
+kubectl apply -f ../mysql_dep.yml
+
+
 kubectl apply -f ../backend/srv_ctn/ctn.yml
+kubectl apply -f ../data-service.yml
+kubectl apply -f ../user-service.yml
 
 
 
