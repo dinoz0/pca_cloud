@@ -10,7 +10,7 @@ git push origin
 read
 
 docker build -t dinoz0/pca_cloud ../backend/srv_ctn 
-docker push dinoz/pca_cloud:tagname 
+docker push dinoz/pca_cloud 
 
 
 
